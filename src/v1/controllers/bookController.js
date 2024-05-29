@@ -17,7 +17,7 @@ const createBook = asyncHandler(async (req, res) => {
     if(error) return res.status(400).json({ error: error.details.map((err) => err.message)});
     
     const book = await bookService.createBook(req.body);
-    res.status(201).json({message: 'Book created successfully ',book: book});
+    res.status(201).json({message: 'Book created successfully'});
 });
 
 const updateBook = asyncHandler(async (req, res) => {
@@ -25,7 +25,7 @@ const updateBook = asyncHandler(async (req, res) => {
     if(error) return res.status(400).json({ error: error.details.map((err) => err.message) });
 
     const book = await bookService.updateBook(req.params.id, req.body);
-    res.status(200).json({message: 'Book updated successfully ' , book: book});
+    res.status(200).json({message: 'Book updated successfully'});
 });
 
 const destroyBook = asyncHandler(async (req, res) => {
